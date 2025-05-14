@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense App</title>
+  <link rel="stylesheet" href="../src/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Expense App Dashboard</h1>
+    <nav>
+      <ul class="tabs">
+        <li data-category="bills" class="active">Bills</li>
+        <li data-category="groceries">Groceries</li>
+        <li data-category="entertainment">Entertainment</li>
+        <li data-category="transport">Transport</li>
+        <li data-category="vacation">Vacation</li>
+      </ul>
+    </nav>
+    <section id="form-section">
+      <form action="" id="expense-form">
+        <select placeholder="Expense" id="title">
+          <!-- need thsi to be the namic even the place holder -->
+        </select>
+        <input type="text" id="description" placeholder="Description" />
+        <input type="number" id="amount" placeholder="Amount" required />
+        <input type="date" id="date" required />
+        <button type="submit">Add Expense</button>
+      </form>
+    </section>
+    <section id="summary-section">
+      <div class="budget">
+        <p>Budget: £<span id="budget-amount">0</span></p>
+        <p>Spent: £<span id="spent-amount">0</span></p>
+      </div>
+      <div class="comparison"></div>
+      <label for="comparison-period">Compare with:</label>
+      <select name="" id="comparison-period">
+        <option value="day">Previous day</option>
+        <option value="week">Previous week</option>
+        <option value="month">Previous month</option>
+        <option value="year">Previous year</option>
+      </select>
+    </section>
+    <section class="charts-section">
+      <canvas id="barChart"></canvas>
+      <canvas id="pieChart"></canvas>
+    </section>
+  </div>
+  <script type="module" src="../src/script.js"></script>
+</body>
+
+</html>
