@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* Global & base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  background-color: #f4f4f4;
+  padding: 10px;
+  color: #252525;
+  margin: 0 auto;
+}
+
+/* Container */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  background: #EBECF0;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem 0;
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #f1356d;
+}
+
+/* Navigation Tabs */
+nav {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+/* Pill */
+.tabs {
+  display: flex;
+  position: relative;
+  background-color: #EBECF0;
+  box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
+  padding: 0.5rem;
+  border-radius: 99px;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* radio button hide */
+.tabs input[type="radio"] {
+  display: none;
+}
+
+/* Label buttons */
+.tabs label {
+  flex: 1;
+  text-align: center;
+  padding: 8px 0;
+  height: 45px;
+  cursor: pointer;
+  border-radius: 99px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  z-index: 2;
+  line-height: 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 0 #FFF;
+}
+
+/* Active highlight */
+/* .tabs input[type="radio"]:checked + label img {
+  background-color: cornflowerblue;
+  filter: brightness(0) invert(1);
+  transition: all 0.2s ease;
+} */
+
+.tabs input[type="radio"]:checked+label {
+  background-color: cornflowerblue;
+  color: #fff;
+  text-shadow: none;
+}
+
+.tabs input[type="radio"]:checked+label .tab-icon {
+  fill: white;
+}
+
+
+/* Highlight glider */
+.tabs .glider {
+  position: absolute;
+  background-color: cornflowerblue;
+  border-radius: 99px;
+  top: 0;
+  left: 0;
+  height: 45px;
+  z-index: 1;
+  transition: transform 0.25s ease-out;
+  pointer-events: none;
+}
+
+.tabs label img {
+  width: 28px;
+  height: 28px;
+}
+
+.tabs label svg {
+  width: 28px;
+  height: 28px;
+  transition: fill 0.3s ease;
+}
+
+.tabs label span {
+  display: none;
+}
+
+/* Form */
+#form-section {
+  margin-bottom: 1.5rem;
+}
+
+#expense-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+select#title:focus-visible {
+  appearance: none;
+  /* Standard */
+  -webkit-appearance: none;
+  /* Safari/Chrome */
+  -moz-appearance: none;
+  /* Firefox */
+}
+
+#expense-form select,
+#expense-form input,
+#expense-form button {
+  padding: 12px;
+  font-size: 1rem;
+  width: 100%;
+  border: none;
+  border-radius: 99px;
+  background-color: #EBECF0;
+  text-shadow: 1px 1px 0 #FFF;
+}
+
+#expense-form select,
+#expense-form input {
+  box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+  transition: all 0.2s ease-in-out;
+  color: #7b7979;
+}
+
+#expense-form input:focus {
+  box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+  border: none;
+}
+
+#expense-form input:focus-visible {
+  outline: none;
+}
+
+#expense-form button {
+  box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-weight: 600;
+  text-shadow: 1px 1px 0 #FFF;
+  border: 1px solid #e2e3e6;
+}
+
+#expense-form button:hover {
+  box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
+}
+
+#expense-form button:active {
+  box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+}
+
+button {
+  color: #f1356d;
+}
+
+#expense-form input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: #7b7979;
+}
+
+#expense-form .selector {
+  appearance: none;
+  /* Standard */
+  -webkit-appearance: none;
+  /* Safari/Chrome */
+  -moz-appearance: none;
+  /* Firefox */
+  padding: 10px 40px 10px 12px;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="30" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+/* Summary Section */
+#summary-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 1.5rem 0.2rem;
+  background: #f4f4f4;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.budget,
+.comparison {
+  background: #EBECF0;
+  padding: 10px;
+  border-left: 4px solid cornflowerblue;
+  border-radius: 6px;
+  font-weight: 600;
+  text-shadow: 1px 1px 0 #FFF;
+}
+
+#comparison-period {
+  background-color: #EBECF0;
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  width: 57%;
+  font-size: 1rem;
+  text-shadow: 1px 1px 0 #FFF;
+  box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+}
+
+.comparison #comparison-period {
+  appearance: none;
+  /* Standard */
+  -webkit-appearance: none;
+  /* Safari/Chrome */
+  -moz-appearance: none;
+  /* Firefox */
+  padding: 10px 40px 10px 12px;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="30" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  box-sizing: border-box;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+.comparison {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* Charts Section */
+#charts-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Media Queries for Larger Screens */
+@media (min-width: 768px) {
+
+  /* container */
+  .container {
+    padding: 1.25rem;
+  }
+
+  /* Navigation Tabs */
+  nav {
+    margin-bottom: 2.5rem;
+  }
+
+  .tabs label {
+    height: 48px;
+  }
+
+  .tabs .glider {
+    height: 48px;
+  }
+
+  /* Active highlight */
+  .tabs input[type="radio"]:checked+label {
+    background-color: cornflowerblue;
+    color: #fff;
+    text-shadow: none;
+  }
+
+  /* Pill */
+  .tabs {
+    padding: 0.75rem;
+  }
+
+  /* Label buttons */
+  .tabs label {
+    padding: 12px 0;
+  }
+
+  /* Highlight glider */
+  .tabs label span {
+    display: block;
+  }
+
+  .tabs label img {
+    display: none;
+  }
+
+  .tabs label svg {
+    display: none;
+  }
+
+  #expense-form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  #expense-form select,
+  #expense-form input {
+    flex: 1 1 48%;
+  }
+
+  #expense-form button {
+    flex: 1 1 100%;
+  }
+
+  #summary-section {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .budget,
+  .comparison {
+    flex: 1 1 48%;
+  }
+
+  #summary-section {
+    margin-bottom: 1.5rem;
+  }
+}
